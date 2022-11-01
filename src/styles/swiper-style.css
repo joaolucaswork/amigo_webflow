@@ -1,0 +1,19 @@
+/* Inicio - Desabilitar setas padrão */
+.swiper-button-next, .swiper-button-prev {display: none;}
+.arrow-next:focus, .arrow-previous:focus {outline: none;}
+  /* Fim - Desabilitar setas padrão */
+  
+  .swiper-pagination-current {
+ color:#000000;
+ opacity:100%;
+ }
+ 
+ .arrow.swiper-button-disabled {
+      color: #C0CDD8;
+      border-color: #C0CDD8;
+    }
+
+
+    .swiper-wrapper {
+      grid-column-gap: 0rem;
+    }

@@ -24,6 +24,7 @@
     "yarn-upgrade-all": "^0.7.1"
   },
   "dependencies": {
+    "dragdealer": "^0.10.0",
     "dragscroll": "^0.0.8",
     "gsap": "^3.11.3",
     "imagesloaded": "^5.0.0",

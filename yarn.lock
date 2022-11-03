@@ -540,6 +540,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dragdealer@npm:^0.10.0":
+  version: 0.10.0
+  resolution: "dragdealer@npm:0.10.0"
+  checksum: f27da023d0c6e1258652701ad433ae262e6abe671a5717fe8a5f184999c29ee63a3fe6723305731b0b79e93df91da4ae1666158231ed226492b2a1afe1ad4c15
+  languageName: node
+  linkType: hard
+
 "dragscroll@npm:^0.0.8":
   version: 0.0.8
   resolution: "dragscroll@npm:0.0.8"
@@ -2642,6 +2649,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "vite-javascript-webflow@workspace:."
   dependencies:
+    dragdealer: ^0.10.0
     dragscroll: ^0.0.8
     eslint: ^8.26.0
     eslint-config-prettier: ^8.5.0

@@ -1,6 +1,7 @@
 /* eslint-disable no-dupe-class-members */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
+import { Dragdealer } from 'dragdealer'
 import gsap from 'gsap'
 import { Observer } from 'gsap/Observer'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'

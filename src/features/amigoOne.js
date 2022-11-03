@@ -1,7 +1,12 @@
+/* eslint-disable no-redeclare */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 import Swiper from 'swiper'
 import 'swiper/css'
 
-function appDepoimentos() {
+export function amigoOne() {
+  // Swiper - Extra Step - add arrows and pagination html markup by code (Append)
+
   // eslint-disable-next-line no-unused-vars
   let Depoimentos = new Swiper('.swiper.is-depoimentos-min', {
     spaceBetween: 32,
@@ -20,5 +25,3 @@ function appDepoimentos() {
     },
   })
 }
-
-export default appDepoimentos

@@ -24,12 +24,15 @@
     "yarn-upgrade-all": "^0.7.1"
   },
   "dependencies": {
+    "counterup2": "^2.0.2",
     "dragdealer": "^0.10.0",
     "dragscroll": "^0.0.8",
     "gsap": "^3.11.3",
     "imagesloaded": "^5.0.0",
     "locomotive-scroll": "^4.1.4",
     "luxy.js": "^0.1.0",
-    "swiper": "^8.4.4"
+    "split-type": "^0.3.3",
+    "swiper": "^8.4.4",
+    "tippy.js": "^6.3.7"
   }
 }

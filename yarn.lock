@@ -115,6 +115,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@popperjs/core@npm:^2.9.0":
+  version: 2.11.6
+  resolution: "@popperjs/core@npm:2.11.6"
+  checksum: 47fb328cec1924559d759b48235c78574f2d71a8a6c4c03edb6de5d7074078371633b91e39bbf3f901b32aa8af9b9d8f82834856d2f5737a23475036b16817f0
+  languageName: node
+  linkType: hard
+
 "@rollup/pluginutils@npm:^4.2.1":
   version: 4.2.1
   resolution: "@rollup/pluginutils@npm:4.2.1"
@@ -438,6 +445,13 @@ __metadata:
   version: 1.1.0
   resolution: "console-control-strings@npm:1.1.0"
   checksum: 8755d76787f94e6cf79ce4666f0c5519906d7f5b02d4b884cf41e11dcd759ed69c57da0670afd9236d229a46e0f9cf519db0cd829c6dca820bb5a5c3def584ed
+  languageName: node
+  linkType: hard
+
+"counterup2@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "counterup2@npm:2.0.2"
+  checksum: d836703e9622ec3b0031efd60ff15ff38b0481f81a42cb9bfd30566e5ef1a55bd6f4e1555083687fb20447e5976c1e3a33c37b07bde0f9c66dbd021c8164fb95
   languageName: node
   linkType: hard
 
@@ -2424,6 +2438,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"split-type@npm:^0.3.3":
+  version: 0.3.3
+  resolution: "split-type@npm:0.3.3"
+  checksum: 359016165642b4a9d1b6633a5d47d75ef229fdd2554c5b0e514b78d8370dd5873cc12e344dbfea13e0274f778417f00d5fcdc03f0a5001e0db9c19a310fb2102
+  languageName: node
+  linkType: hard
+
 "ssr-window@npm:^4.0.0, ssr-window@npm:^4.0.2":
   version: 4.0.2
   resolution: "ssr-window@npm:4.0.2"
@@ -2559,6 +2580,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tippy.js@npm:^6.3.7":
+  version: 6.3.7
+  resolution: "tippy.js@npm:6.3.7"
+  dependencies:
+    "@popperjs/core": ^2.9.0
+  checksum: cac955318a65288e8d2dca05059878b003c6e66f92c94f7810f5bc5448eb6646abdf7dacc9bd00020e2611592598d0aae3a28ec9a45349a159603c3fdddce5fb
+  languageName: node
+  linkType: hard
+
 "tsconfig-paths@npm:^3.14.1":
   version: 3.14.1
   resolution: "tsconfig-paths@npm:3.14.1"
@@ -2649,6 +2679,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "vite-javascript-webflow@workspace:."
   dependencies:
+    counterup2: ^2.0.2
     dragdealer: ^0.10.0
     dragscroll: ^0.0.8
     eslint: ^8.26.0
@@ -2663,7 +2694,9 @@ __metadata:
     luxy.js: ^0.1.0
     prettier: ^2.7.1
     rimraf: ^3.0.2
+    split-type: ^0.3.3
     swiper: ^8.4.4
+    tippy.js: ^6.3.7
     vite: ^3.2.1
     vite-plugin-eslint: ^1.8.1
     yarn-upgrade-all: ^0.7.1

@@ -1,0 +1,18 @@
+.tippy-box[data-theme~='grey-80'] {
+  background-color: #6F7376;
+  backdrop-filter: blur(2px);
+  color: white;
+}
+
+.tippy-box[data-theme~='grey-80'][data-placement^='bottom'] {
+  margin-top: 1rem;
+}
+
+
+.tippy-box[data-theme~='grey-80'][data-placement^='left'] > .tippy-arrow::before {
+  border-left-color: #6F7376;
+}
+
+.tippy-box[data-theme~='grey-80'][data-placement^='bottom'] > .tippy-arrow::before {
+  border-bottom-color: #6F7376;
+}

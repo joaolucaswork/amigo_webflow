@@ -24,6 +24,9 @@
     "yarn-upgrade-all": "^0.7.1"
   },
   "dependencies": {
+    "-": "^0.0.1",
+    "@types/node": "^18.11.9",
+    "D": "^1.0.0",
     "counterup2": "^2.0.2",
     "dragdealer": "^0.10.0",
     "dragscroll": "^0.0.8",
@@ -31,6 +34,7 @@
     "imagesloaded": "^5.0.0",
     "locomotive-scroll": "^4.1.4",
     "luxy.js": "^0.1.0",
+    "resolve": "^1.22.1",
     "split-type": "^0.3.3",
     "swiper": "^8.4.4",
     "tippy.js": "^6.3.7"

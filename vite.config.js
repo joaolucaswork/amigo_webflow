@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import eslintPlugin from 'vite-plugin-eslint'
+import { resolve } from 'path'
 
 // vite.config.js
 export default defineConfig({

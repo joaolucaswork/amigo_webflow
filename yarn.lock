@@ -5,6 +5,13 @@ __metadata:
   version: 6
   cacheKey: 8
 
+"-@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "-@npm:0.0.1"
+  checksum: 33786d96a8c404f3ce4db242b50d9a8f6013b3a0673bba52186b92f016429135ec2d9b9f77abf85c2a2b757c85e9b33a1f44d5dbf9740fd6294de87198681fd6
+  languageName: node
+  linkType: hard
+
 "@esbuild/android-arm@npm:0.15.12":
   version: 0.15.12
   resolution: "@esbuild/android-arm@npm:0.15.12"
@@ -167,6 +174,20 @@ __metadata:
   version: 0.0.29
   resolution: "@types/json5@npm:0.0.29"
   checksum: e60b153664572116dfea673c5bda7778dbff150498f44f998e34b5886d8afc47f16799280e4b6e241c0472aef1bc36add771c569c68fc5125fc2ae519a3eb9ac
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^18.11.9":
+  version: 18.11.9
+  resolution: "@types/node@npm:18.11.9"
+  checksum: cc0aae109e9b7adefc32eecb838d6fad931663bb06484b5e9cbbbf74865c721b03d16fd8d74ad90e31dbe093d956a7c2c306ba5429ba0c00f3f7505103d7a496
+  languageName: node
+  linkType: hard
+
+"D@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "D@npm:1.0.0"
+  checksum: c7aefb83af9b98a04b31b3708a32f5f332183face1b2a6d9eed28b64688d863ca269e04f8b352fba0a8b893ff2aa858c7709352f372f4dd90dfb474a37d2a78d
   languageName: node
   linkType: hard
 
@@ -2679,6 +2700,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "vite-javascript-webflow@workspace:."
   dependencies:
+    "-": ^0.0.1
+    "@types/node": ^18.11.9
+    D: ^1.0.0
     counterup2: ^2.0.2
     dragdealer: ^0.10.0
     dragscroll: ^0.0.8
@@ -2693,6 +2717,7 @@ __metadata:
     locomotive-scroll: ^4.1.4
     luxy.js: ^0.1.0
     prettier: ^2.7.1
+    resolve: ^1.22.1
     rimraf: ^3.0.2
     split-type: ^0.3.3
     swiper: ^8.4.4

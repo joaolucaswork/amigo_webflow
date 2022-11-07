@@ -11,6 +11,7 @@ import SplitType from 'split-type'
 //import imagesloaded from 'imagesloaded'
 
 export function homeAnimations() {
+  gsap.config({ nullTargetWarn: false })
   gsap.registerPlugin(ScrollTrigger)
 
   // Scroll into view
@@ -172,11 +173,15 @@ export function homeAnimations() {
   }
   pqescolherAnimation()
 
-  const el = document.querySelector('.counter')
+  $(function () {
+    if ($('body').is('.homepage')) {
+      const el = document.querySelector('.counter')
 
-  // Start counting, do this on DOM ready or with Waypoints.
-  counterUp(el, {
-    duration: 1000,
-    delay: 16,
+      // Start counting, do this on DOM ready or with Waypoints.
+      counterUp(el, {
+        duration: 1000,
+        delay: 16,
+      })
+    }
   })
 }

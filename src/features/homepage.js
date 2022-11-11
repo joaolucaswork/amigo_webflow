@@ -27,7 +27,6 @@ export function homeAnimations() {
     tl1.to(
       '.image-hero',
       {
-        scale: 1,
         opacity: 1,
         ease: 'Strong.easeInOut',
         duration: 1.2,
@@ -87,7 +86,7 @@ export function homeAnimations() {
         ease: 'power2.out',
         duration: 0.4,
       },
-      0.3
+      0
     )
   }
   heroAnimation()

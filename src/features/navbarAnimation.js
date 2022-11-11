@@ -28,8 +28,8 @@ function navbarAnimation() {
       {
         y: 0,
         autoAlpha: 1,
-        duration: 0.8,
-        stagger: { each: 0.2, from: 'start' },
+        duration: 0.6,
+        stagger: { each: 0.1, from: 'start' },
         ease: 'Strong.easeInOut',
       },
       0
@@ -49,8 +49,8 @@ function navbarAnimation() {
       {
         y: 0,
         autoAlpha: 1,
-        duration: 0.8,
-        stagger: { each: 0.2, from: 'start' },
+        duration: 0.6,
+        stagger: { each: 0.1, from: 'start' },
         ease: 'Strong.easeInOut',
       },
       0

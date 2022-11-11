@@ -96,7 +96,7 @@ export function homeAnimations() {
     let tl2 = gsap.timeline({
       scrollTrigger: {
         trigger: '.home-crescimento_component',
-        start: '-170px center',
+        start: 'top bottom',
         end: 'bottom top',
       },
     })
@@ -131,7 +131,7 @@ export function homeAnimations() {
     let tl3 = gsap.timeline({
       scrollTrigger: {
         trigger: '.section-home-solucoes',
-        start: '-250px center',
+        start: 'top bottom',
         end: 'bottom top',
       },
     })

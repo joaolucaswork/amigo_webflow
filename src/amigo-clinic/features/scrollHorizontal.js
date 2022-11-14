@@ -17,7 +17,7 @@ function scrollHorizontal() {
   let moveDistance
   function calculateScroll() {
     // Desktop
-    let itemsInView = -0.5
+    let itemsInView = 1
     let scrollSpeed = 1.9
 
     if (window.matchMedia('(max-width: 479px)').matches) {
@@ -34,7 +34,7 @@ function scrollHorizontal() {
       scrollSpeed = 1.2
     } else if (window.matchMedia('(min-width: 1920px)').matches) {
       // Tablet
-      itemsInView = -0.5
+      itemsInView = 1
       scrollSpeed = 1.9
     }
     let moveAmount = horizontalItem.length - itemsInView

@@ -2,6 +2,8 @@
   background-color: #6F7376;
   backdrop-filter: blur(2px);
   color: white;
+  font-size: 10px ;
+
 }
 
 .tippy-box[data-theme~='grey-80'][data-placement^='bottom'] {
@@ -11,6 +13,7 @@
 
 .tippy-box[data-theme~='grey-80'][data-placement^='left'] > .tippy-arrow::before {
   border-left-color: #6F7376;
+  
 }
 
 .tippy-box[data-theme~='grey-80'][data-placement^='bottom'] > .tippy-arrow::before {

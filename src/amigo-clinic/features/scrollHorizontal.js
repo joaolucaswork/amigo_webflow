@@ -34,7 +34,7 @@ function scrollHorizontal() {
       scrollSpeed = 1.2
     } else if (window.matchMedia('(min-width: 1920px)').matches) {
       // Tablet
-      itemsInView = 1
+      itemsInView = -0.5
       scrollSpeed = 1.9
     }
     let moveAmount = horizontalItem.length - itemsInView

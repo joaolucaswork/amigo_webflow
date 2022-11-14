@@ -2,7 +2,6 @@
 //import appDepoimentos from './features/amigoOne'
 import scrollHorizontal from './amigo-clinic/features/scrollHorizontal'
 //import { amigoOne } from './features/amigoOne'
-import animateTitle from './features/animateTitle'
 //import carroselDepoimentos from './features/carroselSwiper'
 import { globalCode } from './features/global'
 import { homeAnimations } from './features/homepage'
@@ -13,7 +12,6 @@ import './styles/swiper-style.css'
 import './styles/style.css'
 import './styles/home-animation-style.css'
 
-animateTitle()
 navbarAnimation()
 tippyAnimation()
 homeAnimations()

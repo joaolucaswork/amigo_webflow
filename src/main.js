@@ -3,6 +3,7 @@
 import scrollHorizontal from './amigo-clinic/features/scrollHorizontal'
 //import { amigoOne } from './features/amigoOne'
 //import carroselDepoimentos from './features/carroselSwiper'
+import { amigoClinic } from './features/amigoClinic'
 import { globalCode } from './features/global'
 import { homeAnimations } from './features/homepage'
 import navbarAnimation from './features/navbarAnimation'
@@ -15,5 +16,6 @@ import './styles/home-animation-style.css'
 navbarAnimation()
 tippyAnimation()
 homeAnimations()
+amigoClinic()
 scrollHorizontal()
 globalCode()

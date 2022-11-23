@@ -1,12 +1,9 @@
 /* eslint-disable no-unused-vars */
-//import appDepoimentos from './features/amigoOne'
 import { scrollAtenda } from './amigo-clinic/features/scrollAtenda'
 import { scrollAtendimento } from './amigo-clinic/features/scrollAtendimento'
 import { scrollBackoffice } from './amigo-clinic/features/scrollBackoffice'
 import { scrollFrontoffice } from './amigo-clinic/features/scrollFrontoffice'
 import { scrollOrganize } from './amigo-clinic/features/scrollOrganize'
-//import { amigoOne } from './features/amigoOne'
-//import carroselDepoimentos from './features/carroselSwiper'
 import { amigoClinic } from './features/amigoClinic'
 import { globalCode } from './features/global'
 import { homeAnimations } from './features/homepage'

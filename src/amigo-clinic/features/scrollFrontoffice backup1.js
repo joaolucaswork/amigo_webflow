@@ -33,17 +33,17 @@ export function scrollFrontoffice() {
         end: () => '+=' + scrollContainer.offsetWidth,
       })
 
-      var drag = Draggable.create('.proxy', {
-        trigger: scrollContainer,
+      var drag = Draggable.create(scrollContainer, {
+        //  trigger: scrollContainer,
         type: 'x',
         onPress() {
-          clamp || ScrollTrigger.refresh()
-          this.startScroll = horizontalScroll.scroll()
+          // clamp || ScrollTrigger.refresh()
+          // this.startScroll = horizontalScroll.scroll()
         },
         onDrag() {
-          horizontalScroll.scroll(
-            clamp(this.startScroll - (this.x - this.startX) * dragRatio)
-          )
+          // horizontalScroll.scroll(
+          //   clamp(this.startScroll - (this.x - this.startX) * dragRatio)
+          //  )
           // if you don't want it to lag at all while dragging (due to the 1-second scrub), uncomment the next line:
           //horizontalScroll.getTween().progress(1);
         },

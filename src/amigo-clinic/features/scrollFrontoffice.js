@@ -11,10 +11,10 @@ export function scrollFrontoffice() {
   // © Code by T.RICKS, https://www.timothyricks.com/
   // Copyright 2021, T.RICKS, All rights reserved.
   // You have the license to use this code in your projects but not to redistribute it to others
-  gsap.registerPlugin(ScrollTrigger)
-  gsap.registerPlugin(Draggable)
+  gsap.registerPlugin(ScrollTrigger, Draggable)
 
   let clamp, dragRatio
+  // Animação responsiva do GSAP
 
   $(function () {
     if ($('body').is('.front-office')) {
@@ -65,49 +65,13 @@ export function scrollFrontoffice() {
       window.onresize = function () {
         calculateScroll()
       }
-
-      let horizontalScroll = gsap.timeline({
-        scrollTrigger: {
-          trigger: '.horizontal-trigger',
-          // trigger element - viewport
-          start: 'top top',
-          end: 'bottom top',
-          invalidateOnRefresh: true,
-          scrub: 1,
-        },
-      })
-
-      var drag = Draggable.create('.proxy', {
-        trigger: horizontalSection,
-        type: 'x',
-        onPress() {
-          clamp || ScrollTrigger.refresh()
-          this.startScroll = horizontalScroll.scroll()
-        },
-        onDrag() {
-          horizontalScroll.scroll(
-            clamp(this.startScroll - (this.x - this.startX) * dragRatio)
-          )
-          // if you don't want it to lag at all while dragging (due to the 1-second scrub), uncomment the next line:
-          //horizontalScroll.getTween().progress(1);
-        },
-      })[0]
-
-      horizontalScroll.to('.horizontal-section .clinic-agenda_component', {
-        x: () => -moveDistance,
-        duration: 1,
-      })
-      ScrollTrigger.addEventListener('refresh', () => {
-        clamp = gsap.utils.clamp(
-          horizontalScroll.start + 1,
-          horizontalScroll.end - 1
-        ) // don't let the drag-scroll hit the very start or end so that it doesn't unpin
-        // total scroll amount divided by the total distance that the sections move gives us the ratio we can apply to the pointer movement so that it fits.
-        dragRatio =
-          horizontalSection.offsetWidth /
-          (window.innerWidth * (horizontalItem.length - 1))
-      })
-
+      let scrollTween = gsap.to(
+        '.horizontal-section .clinic-agenda_component',
+        {
+          x: () => -moveDistance,
+          duration: 1,
+        }
+      )
       gsap.to('progress', {
         value: 100,
         ease: 'none',
@@ -118,6 +82,43 @@ export function scrollFrontoffice() {
           start: 'top top',
           end: 'bottom top',
         },
+      })
+
+      let horizontalScroll = ScrollTrigger.create({
+        animation: scrollTween,
+        trigger: '.horizontal-trigger',
+        scrub: 1,
+        start: 'top top',
+        end: 'bottom top',
+        invalidateOnRefresh: true,
+      })
+
+      var drag = Draggable.create('.proxy', {
+        trigger: horizontalSection,
+        type: 'x',
+        allowContextMenu: true,
+        onPress() {
+          clamp || ScrollTrigger.refresh()
+          this.startScroll = horizontalScroll.scroll()
+        },
+        onDrag() {
+          horizontalScroll.scroll(
+            clamp(this.startScroll - (this.x - this.startX) * moveDistance)
+          )
+          // if you don't want it to lag at all while dragging (due to the 1-second scrub), uncomment the next line:
+          //horizontalScroll.getTween().progress(1);
+        },
+      })[0]
+
+      ScrollTrigger.addEventListener('refresh', () => {
+        clamp = gsap.utils.clamp(
+          horizontalScroll.start + 1,
+          horizontalScroll.end - 1
+        ) // don't let the drag-scroll hit the very start or end so that it doesn't unpin
+        // total scroll amount divided by the total distance that the sections move gives us the ratio we can apply to the pointer movement so that it fits.
+        dragRatio =
+          horizontalSection.offsetWidth /
+          (window.innerWidth * (horizontalItem.length - 1))
       })
     }
   })

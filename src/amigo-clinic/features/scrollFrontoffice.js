@@ -96,6 +96,7 @@ export function scrollFrontoffice() {
       var drag = Draggable.create('.proxy', {
         trigger: horizontalSection,
         type: 'x',
+        inertia: true,
         allowContextMenu: true,
         onPress() {
           clamp || ScrollTrigger.refresh()

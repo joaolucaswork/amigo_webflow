@@ -55,7 +55,7 @@ export function amigoClinic() {
         end: 'center 90%',
         scrub: 1,
         immediateRender: false,
-        markers: true,
+        // markers: true,
         // toggleActions: 'restart pause resume reset',
 
         // pin: true,

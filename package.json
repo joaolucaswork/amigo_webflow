@@ -19,6 +19,7 @@
     "jquery": "^3.6.1",
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
+    "sass": "^1.56.1",
     "vite": "^3.2.1",
     "vite-plugin-eslint": "^1.8.1",
     "yarn-upgrade-all": "^0.7.1"

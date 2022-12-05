@@ -2,6 +2,7 @@
 import { scrollAtenda } from './amigo-clinic/features/scrollAtenda'
 import { scrollAtendimento } from './amigo-clinic/features/scrollAtendimento'
 import { scrollBackoffice } from './amigo-clinic/features/scrollBackoffice'
+import { scrollCampanha } from './amigo-clinic/features/scrollCampanha'
 import { scrollFrontoffice } from './amigo-clinic/features/scrollFrontoffice'
 import { scrollOrganize } from './amigo-clinic/features/scrollOrganize'
 import { amigoCare } from './features/amigoCare'
@@ -19,6 +20,7 @@ import './styles/animation.css'
 navbarAnimation()
 tippyAnimation()
 homeAnimations()
+scrollCampanha()
 amigoClinic()
 scrollFrontoffice()
 scrollAtenda()

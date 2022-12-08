@@ -29,6 +29,34 @@ export function globalCode() {
     location.href =
       'https://api.whatsapp.com/send?phone=5581998461310&text=' + string
   })
+
+  class Inserter {
+    constructor() {
+      // params
+      this.element = document.querySelector('[data-insert="me"]')
+      this.collection = document.querySelector('[data-insert="here"]')
+      this.position = this.collection.getAttribute('data-where')
+      this.attach(this.position)
+    }
+    attach(position) {
+      if (position === 'first') {
+        this.collection.insertBefore(this.element, this.collection.children[0])
+      } else if (position === 'last' || position === undefined) {
+        this.collection.appendChild(this.element)
+      } else if (position === 'center') {
+        this.collection.insertBefore(
+          this.element,
+          this.collection.children[this.collection.children.length / 2]
+        )
+      } else {
+        this.collection.insertBefore(
+          this.element,
+          this.collection.children[position]
+        )
+      }
+    }
+  }
+  new Inserter()
 }
 
 // eslint-disable-next-line no-unused-vars

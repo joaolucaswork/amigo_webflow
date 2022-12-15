@@ -9,6 +9,10 @@ export function tippyAnimation() {
     theme: 'grey-80',
     placement: 'left',
   })
+  tippy('.status-icon', {
+    theme: 'grey-80',
+    placement: 'left',
+  })
   tippy('.button-secondary.app-variation.apple-button', {
     theme: 'grey-80',
     allowHTML: true,

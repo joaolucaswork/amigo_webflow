@@ -1,6 +1,5 @@
 /* eslint-disable no-useless-escape */
 /* eslint-disable no-undef */
-import { readingTime } from 'reading-time-estimator'
 
 export function globalCode() {
   var btn = $('.scroll-to-top')
@@ -59,10 +58,48 @@ export function globalCode() {
   }
   new Inserter()
 
-  const text = 'some text to parse'
+  var pageUrl = document.URL
+  var pageTitle = document.title
 
-  // default options
-  const result = readingTime(text, 10)
+  document.querySelector('#share2').addEventListener('click', function () {
+    if (typeof navigator.share === 'undefined') {
+      log('No share API available!')
+    } else {
+      navigator
+        .share({
+          title: pageTitle,
+          url: pageUrl,
+          text: 'Olha essa matéria da L2',
+        })
+
+        .then(function () {
+          log('Share success!')
+        })
+        .catch(function () {
+          log('Share failure!')
+        })
+    }
+  })
+
+  document.querySelector('#share').addEventListener('click', function () {
+    if (typeof navigator.share === 'undefined') {
+      log('No share API available!')
+    } else {
+      navigator
+        .share({
+          title: pageTitle,
+          url: pageUrl,
+          text: 'Olha essa matéria incrível da L2:',
+        })
+
+        .then(function () {
+          log('Share success!')
+        })
+        .catch(function () {
+          log('Share failure!')
+        })
+    }
+  })
 }
 
 // eslint-disable-next-line no-unused-vars

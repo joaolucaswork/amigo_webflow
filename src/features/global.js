@@ -1,5 +1,6 @@
 /* eslint-disable no-useless-escape */
 /* eslint-disable no-undef */
+import { readingTime } from 'reading-time-estimator'
 
 export function globalCode() {
   var btn = $('.scroll-to-top')
@@ -57,6 +58,11 @@ export function globalCode() {
     }
   }
   new Inserter()
+
+  const text = 'some text to parse'
+
+  // default options
+  const result = readingTime(text, 10)
 }
 
 // eslint-disable-next-line no-unused-vars

@@ -35,6 +35,7 @@
     "imagesloaded": "^5.0.0",
     "locomotive-scroll": "^4.1.4",
     "luxy.js": "^0.1.0",
+    "reading-time-estimator": "^1.7.2",
     "resolve": "^1.22.1",
     "split-type": "^0.3.3",
     "swiper": "^8.4.4",

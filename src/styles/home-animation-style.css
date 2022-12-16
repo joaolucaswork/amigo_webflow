@@ -1,27 +1,27 @@
-.image-hero {
+html:not(.w-editor) .image-hero {
   opacity: 0;
 }
 
-.text-animation, .text-animation-2, .text-animation-3 {
+html:not(.w-editor) .text-animation, .text-animation-2, .text-animation-3 {
 opacity: 0;
 }
 
-.nota-app_wrapper {
+html:not(.w-editor) .nota-app_wrapper {
   opacity: 0;
   }
 
-.stagger-up, .stagger-up-2, .stagger-up-3 {
+  html:not(.w-editor) .stagger-up, .stagger-up-2, .stagger-up-3 {
 	opacity: 0;
   transform: translate(0px, 40px);
 }
 
 
-.stagger-left, .stagger-left-2 {
+html:not(.w-editor) .stagger-left, .stagger-left-2 {
   opacity: 0;
   transform: translate(71px, 0px);
 }
 
 
-.section-home-banner{
+html:not(.w-editor) .section-home-banner{
   opacity: 0;
 }

@@ -7,6 +7,8 @@ import { scrollFrontoffice } from './amigo-clinic/features/scrollFrontoffice'
 import { scrollOrganize } from './amigo-clinic/features/scrollOrganize'
 import { amigoCare } from './features/amigoCare'
 import { amigoClinic } from './features/amigoClinic'
+import { artigoPage } from './features/artigoPage'
+import { blogPage } from './features/blogPage'
 import { globalCode } from './features/global'
 import { homeAnimations } from './features/homepage'
 import navbarAnimation from './features/navbarAnimation'
@@ -28,4 +30,6 @@ scrollBackoffice()
 scrollAtendimento()
 scrollOrganize()
 globalCode()
+blogPage()
+artigoPage()
 amigoCare()

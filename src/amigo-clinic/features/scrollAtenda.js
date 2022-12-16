@@ -3,7 +3,6 @@
 /* eslint-disable no-undef */
 import { Dragdealer } from 'dragdealer'
 import gsap from 'gsap'
-import { Observer } from 'gsap/Observer'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import imagesloaded from 'imagesloaded'
 
@@ -14,84 +13,33 @@ export function scrollAtenda() {
   gsap.registerPlugin(ScrollTrigger)
 
   $(function () {
-    if ($('body').is('.atenda')) {
-      let horizontalItem = $('.horizontal-item')
-      let horizontalSection = $('.horizontal-section')
-      let moveDistance
-      // eslint-disable-next-line no-inner-declarations
-      function calculateScroll() {
-        // Desktop
-        let itemsInView = 0.9
-        let scrollSpeed = 1.9
-
-        if (window.matchMedia('(max-width: 479px)').matches) {
-          // Mobile Portrait
-          itemsInView = -3
-          scrollSpeed = 1.2
-        } else if (window.matchMedia('(max-width: 769px)').matches) {
-          // Mobile Landscape
-          itemsInView = -2.2
-          scrollSpeed = 1.2
-        } else if (window.matchMedia('(max-width: 991px)').matches) {
-          // Tablet
-          itemsInView = -2.5
-          scrollSpeed = 1.2
-        } else if (window.matchMedia('(max-width: 1024px)').matches) {
-          // Tablet
-          itemsInView = -2.1
-          scrollSpeed = 1.9
-        } else if (window.matchMedia('(max-width: 1280px)').matches) {
-          // Tablet
-          itemsInView = -1.3
-          scrollSpeed = 1.9
-        } else if (window.matchMedia('(max-width: 1920px)').matches) {
-          itemsInView = -0.1
-          scrollSpeed = 1.9
-        }
-
-        let moveAmount = horizontalItem.length - itemsInView
-        let minHeight =
-          scrollSpeed * horizontalItem.outerWidth() * horizontalItem.length
-        if (moveAmount <= 0) {
-          moveAmount = 0
-          minHeight = 0
-          // horizontalSection.css('height', '100vh');
-        } else {
-          horizontalSection.css('height', '200vh')
-        }
-        moveDistance = horizontalItem.outerWidth() * moveAmount
-        horizontalSection.css('min-height', minHeight + 'px')
-      }
-      calculateScroll()
-      window.onresize = function () {
-        calculateScroll()
-      }
-
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: '.horizontal-trigger',
-          // trigger element - viewport
-          start: 'top top',
-          end: 'bottom top',
-          invalidateOnRefresh: true,
-          scrub: 1,
-        },
-      })
-      tl.to('.horizontal-section .clinic-agenda_component', {
-        x: () => -moveDistance,
-        duration: 1,
+    if ($('body').is('.internpage')) {
+      $('.section-hero-front-office').each(function (index) {
+        ScrollTrigger.create({
+          trigger: $(this),
+          start: 'top 10%',
+          end: 'bottom 10%',
+          onEnter: () => {
+            $('.close-icon-scroll.version-scroll').removeClass('show')
+          },
+          onEnterBack: () => {
+            $('.close-icon-scroll.version-scroll').removeClass('show')
+          },
+        })
       })
 
-      gsap.to('progress', {
-        value: 100,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.horizontal-trigger',
-          scrub: 1,
-          invalidateOnRefresh: true,
-          start: 'top top',
-          end: 'bottom top',
-        },
+      $('.section-intern').each(function (index) {
+        ScrollTrigger.create({
+          trigger: $(this),
+          start: 'top 10%',
+          end: 'bottom 10%',
+          onEnter: () => {
+            $('.close-icon-scroll.version-scroll').addClass('show')
+          },
+          onEnterBack: () => {
+            $('.close-icon-scroll.version-scroll').addClass('show')
+          },
+        })
       })
     }
   })

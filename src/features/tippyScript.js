@@ -8,14 +8,17 @@ export function tippyAnimation() {
   tippy('.scroll-to-top', {
     theme: 'grey-80',
     placement: 'left',
+    touch: false,
   })
   tippy('.status-icon', {
     theme: 'grey-80',
     placement: 'left',
+    touch: false,
   })
   tippy('.button-secondary.app-variation.apple-button', {
     theme: 'grey-80',
     allowHTML: true,
+    touch: false,
     content:
       '<div class="qr-code_wrapper apple-store"><div class="max-width-qr"><div>Aponte a câmera do seu celular</div></div><img src="https://uploads-ssl.webflow.com/6357a19f7e2c508311a7fcf5/63713a05a2ecca7d41eaccde_appstore.svg" loading="lazy" alt="" class="image-qr-code"></div>',
     placement: 'bottom',
@@ -23,6 +26,7 @@ export function tippyAnimation() {
   tippy('.button-secondary.app-variation.android-button', {
     theme: 'grey-80',
     allowHTML: true,
+    touch: false,
     content:
       '<div class="qr-code_wrapper app-store"><div class="max-width-qr"><div>Aponte a câmera do seu celular</div></div><img src="https://uploads-ssl.webflow.com/6357a19f7e2c508311a7fcf5/63713a052c89f717f5b1b2c3_playstore.svg" loading="lazy" alt="" class="image-qr-code"></div>',
     placement: 'bottom',

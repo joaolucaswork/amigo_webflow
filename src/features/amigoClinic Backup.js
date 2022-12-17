@@ -9,10 +9,6 @@ gsap.registerPlugin(ScrollTrigger)
 export function amigoClinic() {
   $(function () {
     if ($('body').is('.amigo-clinic')) {
-      let trigger = '.copy-text'
-      let visual = '.number-plataforma'
-      let section = '.section-plataforma-inteligente'
-
       $('.section-plataforma-inteligente').each(function (index) {
         let triggerElement = $(this)
         // let targetElement = $(".mm-item-1");
@@ -21,7 +17,7 @@ export function amigoClinic() {
           scrollTrigger: {
             trigger: triggerElement,
             // trigger element - viewport
-            start: 'center 42%',
+            start: 'center center',
             immediateRender: false,
             pin: true,
             //  AnticipatePin:1,
@@ -46,32 +42,32 @@ export function amigoClinic() {
           0
         )
       })
-      // On page load
-      $(section).each(function (index) {
-        $(this).find(trigger).first().addClass('active')
-        $(this).find(visual).first().addClass('active')
-      })
 
-      // On scroll into view
-      $(trigger).each(function (index) {
+      // Grid Title Change
+      $('.number-plataforma').eq(0).addClass('is--active')
+      $('.copy-text').each(function (index) {
+        let triggerElement = $(this)
         let myIndex = $(this).index()
-        let mySection = $(this).closest(section)
-        let targetElement = mySection.find(visual).eq(myIndex)
+        let targetElement = $('.number-plataforma').eq(myIndex)
         let tl = gsap.timeline({
           scrollTrigger: {
-            trigger: $(this),
+            trigger: triggerElement,
             // trigger element - viewport
-            start: 'top -150%',
-            end: 'bottom center',
+            start: 'top bottom',
+            end: '+=900 center',
+            scrub: 1,
+            immediateRender: true,
+            markers: true,
+            // toggleActions: 'restart pause resume reset',
+
+            // pin: true,
             onEnter: () => {
-              mySection.find('.active').removeClass('active')
-              $(this).addClass('active')
-              targetElement.addClass('active')
+              $('.number-plataforma').removeClass('is--active')
+              targetElement.addClass('is--active')
             },
             onEnterBack: () => {
-              mySection.find('.active').removeClass('active')
-              $(this).addClass('active')
-              targetElement.addClass('active')
+              $('.number-plataforma').removeClass('is--active')
+              targetElement.addClass('is--active')
             },
           },
         })

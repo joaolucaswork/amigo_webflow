@@ -21,7 +21,7 @@ export function amigoClinic() {
           scrollTrigger: {
             trigger: triggerElement,
             // trigger element - viewport
-            start: 'center 42%',
+            start: 'center 35%',
             immediateRender: false,
             pin: true,
             //  AnticipatePin:1,

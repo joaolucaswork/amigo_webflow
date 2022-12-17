@@ -16,6 +16,8 @@ export function amigoClinic() {
       $('.section-plataforma-inteligente').each(function (index) {
         let triggerElement = $(this)
         // let targetElement = $(".mm-item-1");
+        const points = gsap.utils.toArray('.plataforma-inteligente_component')
+        const height = 100 * points.length
 
         let tl0 = gsap.timeline({
           scrollTrigger: {
@@ -25,8 +27,8 @@ export function amigoClinic() {
             immediateRender: false,
             pin: true,
             //  AnticipatePin:1,
-            end: '+=900 center',
-            markers: true,
+            end: '+=' + height + '%',
+            //  markers: true,
             preventOverlaps: false,
             fastScrollEnd: false,
             // pinSpacing: true,

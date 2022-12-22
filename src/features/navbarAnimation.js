@@ -37,7 +37,7 @@ function navbarAnimation() {
     element.animation = tl0
   })
 
-  $('#solucoes-nav').mouseenter(function () {
+  $('#solucoes-nav').on('click', function () {
     this.animation.play()
   })
 
@@ -58,7 +58,7 @@ function navbarAnimation() {
     element.animation = tl0
   })
 
-  $('#produtos-nav').mouseenter(function () {
+  $('#produtos-nav').on('click', function () {
     this.animation.play()
   })
 }

@@ -7,7 +7,10 @@
 /* eslint-disable no-undef */
 import { Dragdealer } from 'dragdealer'
 import gsap from 'gsap'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollToPlugin)
 
 export function globalCode() {
   var btn = $('.scroll-to-top')
@@ -29,21 +32,16 @@ export function globalCode() {
   })
 
   $('.tab-contabilidade.clinicas').on('click', function (e) {
-    $('html,body').animate({
-      scrollTop: $('.div-trick').offset().top,
-    })
     $('.menu_link.p-clinicas').addClass('w--current')
     $('.menu_link.p-profissionais').removeClass('w--current')
-
+    gsap.to(window, { duration: 0, scrollTo: '.div-trick' })
     return false
   })
 
   $('.tab-contabilidade.profissionais').on('click', function (e) {
-    $('html,body').animate({
-      scrollTop: $('.div-trick').offset().top,
-    })
     $('.menu_link.p-profissionais').addClass('w--current')
     $('.menu_link.p-clinicas').removeClass('w--current')
+    gsap.to(window, { duration: 0, scrollTo: '.div-trick' })
 
     return false
   })

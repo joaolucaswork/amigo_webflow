@@ -31,9 +31,10 @@ export function globalCode() {
   })
 
   $('.tab-contabilidade.clinicas').on('click', function (e) {
+    gsap.to(window, { duration: 0, scrollTo: '.div-trick' })
     $('.menu_link.p-clinicas').addClass('w--current')
     $('.menu_link.p-profissionais').removeClass('w--current')
-    gsap.to(window, { duration: 0, scrollTo: '.div-trick' })
+
     return false
   })
 

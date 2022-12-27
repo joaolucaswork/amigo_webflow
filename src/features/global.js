@@ -20,17 +20,24 @@ export function globalCode() {
     $('html, body').animate({ scrollTop: 0 }, '300')
   })
 
-  $('.menu_link.p-profissionais').on('click', function (e) {
-    gsap.to(window, { duration: 0, scrollTo: '.div-trick' })
+  // Tab Profissionais
+  if ($('.tab-contabilidade.profissionais').hasClass('w--current')) {
     $('.menu_link.p-profissionais').addClass('w--current')
     $('.menu_link.p-clinicas').removeClass('w--current')
+  }
+
+  // Tab Clinicas
+  if ($('.tab-contabilidade.clinicas').hasClass('w--current')) {
+    $('.menu_link.p-profissionais').removeClass('w--current')
+    $('.menu_link.p-clinicas').addClass('w--current')
+  }
+
+  $('.menu_link.p-profissionais').on('click', function (e) {
     $('.tab-contabilidade.profissionais').click()
     return false
   })
 
   $('.menu_link.p-clinicas').on('click', function (e) {
-    $('.menu_link.p-clinicas').addClass('w--current')
-    $('.menu_link.p-profissionais').removeClass('w--current')
     $('.tab-contabilidade.clinicas').click()
     return false
   })

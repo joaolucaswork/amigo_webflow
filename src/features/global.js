@@ -108,5 +108,34 @@ export function globalCode() {
 
     return false
   })
+
+  // Tab Menu
+  $('.section-recem-formado-hero').each(function (index) {
+    ScrollTrigger.create({
+      trigger: $(this),
+      start: 'top 10%',
+      end: 'bottom 10%',
+      onEnter: () => {
+        $('.menu_wrap').removeClass('active-menu')
+      },
+      onEnterBack: () => {
+        $('.menu_wrap').removeClass('active-menu')
+      },
+    })
+  })
+
+  $('.section-contabilidade-tab').each(function (index) {
+    ScrollTrigger.create({
+      trigger: $(this),
+      start: 'top 10%',
+      end: 'bottom 10%',
+      onEnter: () => {
+        $('.menu_wrap').addClass('active-menu')
+      },
+      onEnterBack: () => {
+        $('.menu_wrap').addClass('active-menu')
+      },
+    })
+  })
 }
 // eslint-disable-next-line no-unused-vars

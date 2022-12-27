@@ -21,11 +21,16 @@ export function globalCode() {
   })
 
   $('.menu_link.p-profissionais').on('click', function (e) {
+    gsap.to(window, { duration: 0, scrollTo: '.div-trick' })
+    $('.menu_link.p-profissionais').addClass('w--current')
+    $('.menu_link.p-clinicas').removeClass('w--current')
     $('.tab-contabilidade.profissionais').click()
     return false
   })
 
   $('.menu_link.p-clinicas').on('click', function (e) {
+    $('.menu_link.p-clinicas').addClass('w--current')
+    $('.menu_link.p-profissionais').removeClass('w--current')
     $('.tab-contabilidade.clinicas').click()
     return false
   })
@@ -34,7 +39,6 @@ export function globalCode() {
     gsap.to(window, { duration: 0, scrollTo: '.div-trick' })
     $('.menu_link.p-clinicas').addClass('w--current')
     $('.menu_link.p-profissionais').removeClass('w--current')
-
     return false
   })
 

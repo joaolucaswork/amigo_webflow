@@ -20,6 +20,58 @@ export function globalCode() {
     $('html, body').animate({ scrollTop: 0 }, '300')
   })
 
+  const config = { attributes: true, childList: true, subtree: true }
+  const callback = function (mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      snapToCurrent()
+    }
+  }
+  const observer = new MutationObserver(callback)
+  $('.menu_link').each(function (index) {
+    observer.observe($(this)[0], config)
+  })
+
+  let duration = 500
+  let menuShape = $('.menu_shape')
+  let menuShapeBG = $('.menu_shape-bg')
+  let menuLink = $('.menu_link')
+
+  function snapToCurrent() {
+    $('.menu_link-bg').css('opacity', '0')
+    menuShape.css('opacity', '1')
+    if ($('.menu_link.w--current').length) {
+      moveShape($('.menu_link.w--current'))
+    } else {
+      menuShape.css('opacity', '0')
+    }
+  }
+
+  // On page load
+  menuShapeBG.css('transition', `width ${duration / 2}ms`)
+  menuShape.css('transition', `all ${duration}ms`)
+
+  // Snap
+  function moveShape(target) {
+    let linkWidth = target.innerWidth()
+    let linkOffset = target.offset().left
+    let menuOffset = $('.menu').offset().left
+    let leftPosition = linkOffset - menuOffset
+    menuShape.css('left', leftPosition)
+    menuShape.css('width', linkWidth)
+  }
+
+  // Resize
+  window.addEventListener('resize', function () {
+    snapToCurrent()
+  })
+
+  // Back button safari
+  window.onpageshow = function (event) {
+    if (event.persisted) {
+      window.location.reload()
+    }
+  }
+
   // Tab Profissionais
   if ($('.tab-contabilidade.profissionais').hasClass('w--current')) {
     $('.menu_link.p-profissionais').addClass('w--current')

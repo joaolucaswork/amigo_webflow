@@ -14,7 +14,6 @@ gsap.registerPlugin(ScrollToPlugin)
 
 export function globalCode() {
   var btn = $('.scroll-to-top')
-  var btn2 = $('.menu_link')
 
   btn.on('click', function (e) {
     e.preventDefault()
@@ -39,9 +38,9 @@ export function globalCode() {
   })
 
   $('.tab-contabilidade.profissionais').on('click', function (e) {
+    gsap.to(window, { duration: 0, scrollTo: '.div-trick' })
     $('.menu_link.p-profissionais').addClass('w--current')
     $('.menu_link.p-clinicas').removeClass('w--current')
-    gsap.to(window, { duration: 0, scrollTo: '.div-trick' })
 
     return false
   })

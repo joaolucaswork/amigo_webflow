@@ -110,7 +110,7 @@ export function globalCode() {
   })
 
   // Tab Menu
-  $('.section-recem-formado-hero').each(function (index) {
+  $('.div-trick').each(function (index) {
     ScrollTrigger.create({
       trigger: $(this),
       start: 'top 10%',
@@ -124,10 +124,10 @@ export function globalCode() {
     })
   })
 
-  $('.section-contabilidade-tab').each(function (index) {
+  $('.show-navbar').each(function (index) {
     ScrollTrigger.create({
       trigger: $(this),
-      start: 'top 10%',
+      start: '-150 center',
       end: 'bottom 10%',
       onEnter: () => {
         $('.menu_wrap').addClass('active-menu')

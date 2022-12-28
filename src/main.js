@@ -2,6 +2,7 @@
 import { scrollAtenda } from './amigo-clinic/features/scrollAtenda'
 import { amigoCare } from './features/amigoCare'
 import { amigoClinic } from './features/amigoClinic'
+import { amigoContabil } from './features/amigoContabil'
 import { amigoSenior } from './features/amigoSenior'
 import { artigoPage } from './features/artigoPage'
 import { blogPage } from './features/blogPage'
@@ -21,6 +22,7 @@ homeAnimations()
 amigoClinic()
 scrollAtenda()
 amigoSenior()
+amigoContabil()
 globalCode()
 blogPage()
 artigoPage()

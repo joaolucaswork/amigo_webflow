@@ -3,6 +3,7 @@
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import stickybits from 'stickybits'
 
 gsap.registerPlugin(ScrollToPlugin)
 
@@ -10,6 +11,10 @@ export function amigoContabil() {
   $(function () {
     if ($('body').is('.amigo-contabil')) {
       $(function () {
+        stickybits('.nossos-planos-profissionais-top_wrapper', {
+          stickyBitStickyOffset: 0,
+        })
+
         /*** START SCRIPT CONFIG ***/
 
         // Replace with value for your form. ie. "#your-form-id" or ".your-form-class"

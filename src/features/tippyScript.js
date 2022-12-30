@@ -36,12 +36,34 @@ export function tippyAnimation() {
     touch: true,
     maxWidth: 263,
     placement: 'bottom',
+    popperOptions: {
+      modifiers: [
+        {
+          name: 'preventOverflow',
+          options: {
+            altAxis: true,
+            tether: false,
+          },
+        },
+      ],
+    },
   })
   tippy('.tooltip-advice.endereco-virtual', {
     theme: 'grey-80',
     touch: true,
     maxWidth: 240,
     placement: 'right',
+    popperOptions: {
+      modifiers: [
+        {
+          name: 'preventOverflow',
+          options: {
+            altAxis: true,
+            tether: false,
+          },
+        },
+      ],
+    },
   })
   tippy('.tooltip-advice.amigo-one', {
     theme: 'grey-80',
@@ -49,6 +71,17 @@ export function tippyAnimation() {
     touch: true,
     maxWidth: 215,
     placement: 'right',
+    popperOptions: {
+      modifiers: [
+        {
+          name: 'preventOverflow',
+          options: {
+            altAxis: true,
+            tether: false,
+          },
+        },
+      ],
+    },
     content:
       '<div class="tooltip-amigo-one-content"><div>Descubra como o Amigo One reinventa sua rotina:</div><a href="/amigo-one" class="button-secondary tolltip w-button">Conhecer o Amigo One</a></div>',
   })

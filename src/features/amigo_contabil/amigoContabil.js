@@ -20,10 +20,10 @@ export function amigoContabil() {
         $('.accordion').click()
         return false
       })
+
+      extraNavbarFunction()
+      formFunction()
+      tabelaFunction()
     }
   })
 }
-
-extraNavbarFunction()
-formFunction()
-tabelaFunction()

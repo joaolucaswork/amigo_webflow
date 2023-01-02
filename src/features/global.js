@@ -20,4 +20,3 @@ export function globalCode() {
     $('html, body').animate({ scrollTop: 0 }, '300')
   })
 }
-// eslint-disable-next-line no-unused-vars

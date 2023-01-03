@@ -10,8 +10,13 @@ html:not(.w-editor) .nota-app_wrapper {
   opacity: 0;
   }
 
-  html:not(.w-editor) .stagger-up, .stagger-up-2, .stagger-up-3 {
+  html:not(.w-editor) .stagger-up, .stagger-up-2 {
 	opacity: 0;
+  transform: translate(0px, 40px);
+}
+
+html:not(.w-editor) .stagger-up-3 {
+  opacity: 0;
   transform: translate(0px, 40px);
 }
 

@@ -20,21 +20,26 @@
 
 
 .tippy-box[data-theme~='grey-80'][data-placement^='left'] > .tippy-arrow::before {
-  border-left-color: #6F7376;
+  border-left-color: rgba(78, 82, 85, 0.8);
 }
 
 .tippy-box[data-theme~='grey-80'][data-placement^='right'] > .tippy-arrow::before {
-  border-right-color: #6F7376;
+  border-right-color: rgba(78, 82, 85, 0.8);
 }
 
 .tippy-box[data-theme~='grey-80'][data-placement^='bottom'] > .tippy-arrow::before {
-  border-bottom-color: #6F7376;
+  border-bottom-color: rgba(78, 82, 85, 0.8);
 }
 
 .tippy-box[data-theme~='grey-80-v2'][data-placement^='bottom'] > .tippy-arrow::before {
-  border-bottom-color: #6F7376;
+  border-bottom-color: rgba(78, 82, 85, 0.8);
 }
 
 .tippy-box[data-theme~='grey-80'][data-placement^='top'] > .tippy-arrow::before {
-  border-top-color: #6F7376;
+  border-top-color: rgba(78, 82, 85, 0.8);
 }
+
+
+/* .nossos-planos-profissionais-top_wrapper.js-is-stuck {
+  opacity: 0;
+} */

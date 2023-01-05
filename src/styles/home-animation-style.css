@@ -2,9 +2,13 @@ html:not(.w-editor) .image-hero {
   opacity: 0;
 }
 
-html:not(.w-editor) .text-animation, .text-animation-2, .text-animation-3 {
+html:not(.w-editor) .text-animation, .text-animation-2 {
 opacity: 0;
 }
+
+html:not(.w-editor) .text-animation-3 {
+  opacity: 0;
+  }
 
 html:not(.w-editor) .nota-app_wrapper {
   opacity: 0;

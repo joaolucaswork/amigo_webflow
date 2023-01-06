@@ -2,6 +2,7 @@
 /* eslint-disable no-undef */
 import gsap from 'gsap'
 
+import { animationsFunction } from './features_amigo-contabil/animationsFunction'
 import { extraNavbarFunction } from './features_amigo-contabil/extraNavbarFunction'
 import { formFunction } from './features_amigo-contabil/formFunction'
 import { strickTrickFunction } from './features_amigo-contabil/stickTrickFunction'
@@ -19,6 +20,7 @@ export function amigoContabil() {
       formFunction()
       tabelaFunction()
       strickTrickFunction()
+      animationsFunction()
 
       document
         .querySelectorAll('.accordion-clinica-servicos')

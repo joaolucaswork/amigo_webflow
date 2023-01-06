@@ -10,6 +10,8 @@ html:not(.w-editor) .text-animation-3 {
   opacity: 0;
   }
 
+.texto-contabilidade-rotate { transform: rotate(90deg); }
+
 html:not(.w-editor) .nota-app_wrapper {
   opacity: 0;
   }

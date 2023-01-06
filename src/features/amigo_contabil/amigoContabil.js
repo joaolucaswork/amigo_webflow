@@ -19,6 +19,23 @@ export function amigoContabil() {
       formFunction()
       tabelaFunction()
       strickTrickFunction()
+
+      document
+        .querySelectorAll('.accordion-clinica-servicos')
+        .forEach((trigger) => {
+          trigger.addEventListener('click', function () {
+            this.x = ((this.x || 0) + 1) % 2
+            if (this.x) {
+              this.querySelectorAll('.accordion-content-tudo-clinica').forEach(
+                (target) => target.classList.add('aberto')
+              )
+            } else {
+              this.querySelectorAll('.accordion-content-tudo-clinica').forEach(
+                (target) => target.classList.remove('aberto')
+              )
+            }
+          })
+        })
     }
   })
 }

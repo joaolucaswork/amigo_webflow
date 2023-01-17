@@ -8,11 +8,15 @@ gsap.registerPlugin(ScrollToPlugin, ScrollTrigger)
 
 export function tabelaFunction() {
   $('.mostrar-mais-buton-area').on('click', function () {
-    $('.starter-tabela-content-mobile_wrapper').toggleClass('closed-table')
-    $('.mostrar-mais-button').toggleClass('full-size')
     gsap.to(window, {
       duration: 0.5,
       scrollTo: '.visual-element-tabela',
+    })
+  })
+  $('.pro-mostrar-mais-buton-area').on('click', function () {
+    gsap.to(window, {
+      duration: 0.5,
+      scrollTo: '.pro-visual-element-tabela',
     })
   })
 }

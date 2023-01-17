@@ -12,7 +12,7 @@ export function tabelaFunction() {
     $('.mostrar-mais-button').toggleClass('full-size')
     gsap.to(window, {
       duration: 0.5,
-      scrollTo: '.starter-tabela-content-mobile_wrapper',
+      scrollTo: '.visual-element-tabela',
     })
   })
 }

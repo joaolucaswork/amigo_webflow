@@ -16,7 +16,7 @@ export function tabelaFunction() {
   $('.pro-mostrar-mais-buton-area').on('click', function () {
     gsap.to(window, {
       duration: 0.5,
-      scrollTo: '.pro-visual-element-tabela',
+      scrollTo: '.mostrar-mais-button',
     })
   })
 }

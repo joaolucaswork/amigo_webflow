@@ -11,11 +11,6 @@ import { tabelaFunction } from './features_amigo-contabil/tabelaFunction'
 export function amigoContabil() {
   $(function () {
     if ($('body').is('.amigo-contabil')) {
-      $('.open-faq-button').on('click', function (e) {
-        $('.accordion-clinica-servicos').click()
-        return false
-      })
-
       extraNavbarFunction()
       formFunction()
       tabelaFunction()

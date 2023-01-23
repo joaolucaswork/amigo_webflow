@@ -1,11 +1,18 @@
 /* eslint-disable no-undef */
-import stickybits from 'stickybits'
+//import stickybits from 'stickybits'
 
 export function strickTrickFunction() {
-  $(function () {
-    stickybits('.nossos-planos-profissionais-top_wrapper', {
-      stickyBitStickyOffset: 0,
-      useStickyClasses: true,
+  const stopStick = (position) => {
+    const element = document.querySelector('.nossos-planos-wrapper')
+    // eslint-disable-next-line no-unused-vars
+    window.addEventListener('scroll', function (event) {
+      if (window.scrollY > position) {
+        element.classList.add('no-stick')
+      } else {
+        element.classList.remove('no-stick')
+      }
     })
-  })
+  }
+
+  stopStick(3500) // 200px
 }

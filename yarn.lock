@@ -1887,6 +1887,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"js-confetti@npm:^0.11.0":
+  version: 0.11.0
+  resolution: "js-confetti@npm:0.11.0"
+  checksum: 6bd280952842bb9cf0587042fe8f716423bc1e8a652145aeaefb68c70480be4477ae9ff556e569a7fa05763e8e24d0d2700d9cf88e7f210261e83069deb74dbf
+  languageName: node
+  linkType: hard
+
 "js-sdsl@npm:^4.1.4":
   version: 4.3.0
   resolution: "js-sdsl@npm:4.3.0"
@@ -2981,6 +2988,7 @@ __metadata:
     imagesloaded: ^5.0.0
     jquery: ^3.6.1
     jquery.scrollto: ^2.1.3
+    js-confetti: ^0.11.0
     locomotive-scroll: ^4.1.4
     luxy.js: ^0.1.0
     prettier: ^2.7.1

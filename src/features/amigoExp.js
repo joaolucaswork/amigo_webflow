@@ -4,6 +4,7 @@ import { Dragdealer } from 'dragdealer'
 import gsap from 'gsap'
 import { Draggable } from 'gsap/all'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import JSConfetti from 'js-confetti'
 import LocomotiveScroll from 'locomotive-scroll'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -43,12 +44,18 @@ export function amigoExp() {
         height: window.innerHeight,
       }
     },
+    pinType: document.querySelector('.locomotive-scroll').style.transform
+      ? 'transform'
+      : 'fixed',
+  })
+  // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
+  ScrollTrigger.addEventListener('refresh', () => locoScroll.update())
 
-    // follwoing line is not required to work pinning on touch screen
+  // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
+  ScrollTrigger.refresh()
 
-    /* pinType: document.querySelector(".smooth-scroll").style.transform
-      ? "transform"
-      : "fixed"*/
+  ScrollTrigger.defaults({
+    scroller: '.locomotive-scroll',
   })
 
   $('.section_relacao-medico').each(function (index) {
@@ -80,18 +87,21 @@ export function amigoExp() {
     })
   })
 
-  ScrollTrigger.addEventListener('refresh', () => locoScroll.update())
-  ScrollTrigger.refresh()
-
   const secaoEspecifica = document.querySelectorAll(
     '.section_melhorar-experiencia'
   )
+  $('.toggle-decorative').on('click', function (e) {
+    e.preventDefault()
+  })
 
   var toggle = new Dragdealer('toggle-decorative', {
     steps: 2,
+    x: 0,
+    y: 1,
     speed: 0.3,
     right: 16,
-    slide: false,
+    //  slide: true,
+
     requestAnimationFrame: true,
     animationCallback: function (x, y) {
       // Atualiza o estado do toggle quando o usuário arrasta o controle
@@ -105,6 +115,7 @@ export function amigoExp() {
         document
           .querySelectorAll('.toggle-decorative')
           .forEach((target) => target.classList.add('active'))
+        confetti()
       }
     },
   })
@@ -113,8 +124,49 @@ export function amigoExp() {
     trigger: secaoEspecifica,
     scroller: '.locomotive-scroll',
     start: 'top 50%',
+    lazy: false,
     onEnter: function () {
       toggle.setValue(1) // Muda o estado do toggle quando a seção específica entra na viewport
     },
   })
+
+  ScrollTrigger.create({
+    trigger: '.section_voce-ja-pensou',
+    scroller: '.locomotive-scroll',
+    start: 'top center',
+    lazy: false,
+    onEnter: function () {
+      toggle.setValue(1) // Muda o estado do toggle quando a seção específica entra na viewport
+      document
+        .querySelectorAll('.light-led-emoji')
+        .forEach((target) => target.classList.add('acessa'))
+    },
+  })
+
+  const canvas = document.querySelector('#canvas-target')
+  const jsConfetti = new JSConfetti({ canvas })
+
+  const confetti = () => {
+    jsConfetti.addConfetti({
+      confettiNumber: 2,
+      emojiSize: 100,
+      emojis: ['🥼', '🩺', '👩🏿‍⚕️', '👩🏻‍⚕️', '💙'],
+    })
+  }
+
+  let tl = gsap.timeline()
+
+  tl.to(
+    '.aexp-img',
+    {
+      opacity: 1,
+      scale: 1,
+      stagger: { each: 0.1, from: 'start' },
+      ease: 'power2.out',
+      duration: 0.8,
+    },
+    0
+  )
+
+  locoScroll.on('resize', ScrollTrigger.update)
 }

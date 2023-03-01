@@ -1,6 +1,8 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
+import { Dragdealer } from 'dragdealer'
 import gsap from 'gsap'
+import { Draggable } from 'gsap/all'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import LocomotiveScroll from 'locomotive-scroll'
 
@@ -66,7 +68,6 @@ export function amigoExp() {
         trigger: $(this),
         scroller: '.locomotive-scroll',
         ease: 'none',
-        markers: true,
         scrub: 'true',
         start: '30vh center',
         end: 'bottom center',
@@ -81,4 +82,39 @@ export function amigoExp() {
 
   ScrollTrigger.addEventListener('refresh', () => locoScroll.update())
   ScrollTrigger.refresh()
+
+  const secaoEspecifica = document.querySelectorAll(
+    '.section_melhorar-experiencia'
+  )
+
+  var toggle = new Dragdealer('toggle-decorative', {
+    steps: 2,
+    speed: 0.3,
+    right: 16,
+    slide: false,
+    requestAnimationFrame: true,
+    animationCallback: function (x, y) {
+      // Atualiza o estado do toggle quando o usuário arrasta o controle
+      var toggleState = Math.round(x)
+      // Faça algo com o estado do toggle, por exemplo:
+      if (toggleState === 0) {
+        document
+          .querySelectorAll('.toggle-decorative')
+          .forEach((target) => target.classList.remove('active'))
+      } else {
+        document
+          .querySelectorAll('.toggle-decorative')
+          .forEach((target) => target.classList.add('active'))
+      }
+    },
+  })
+
+  ScrollTrigger.create({
+    trigger: secaoEspecifica,
+    scroller: '.locomotive-scroll',
+    start: 'top 50%',
+    onEnter: function () {
+      toggle.setValue(1) // Muda o estado do toggle quando a seção específica entra na viewport
+    },
+  })
 }

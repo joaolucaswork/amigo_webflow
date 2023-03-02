@@ -4,6 +4,7 @@ import { Dragdealer } from 'dragdealer'
 import gsap from 'gsap'
 import { Draggable } from 'gsap/all'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import imagesloaded from 'imagesloaded'
 import JSConfetti from 'js-confetti'
 import LocomotiveScroll from 'locomotive-scroll'
 
@@ -14,7 +15,7 @@ export function amigoExp() {
     el: document.querySelector('.locomotive-scroll'),
     smooth: true,
     smartphone: {
-      smooth: true,
+      smooth: false,
       breakpoint: 0,
     },
     tablet: {
@@ -25,10 +26,6 @@ export function amigoExp() {
   })
 
   // Wait 2 seconds then calculate the new page height
-
-  setTimeout(() => {
-    locoScroll.on('scroll', ScrollTrigger.update)
-  }, 2000)
 
   ScrollTrigger.scrollerProxy('.locomotive-scroll', {
     scrollTop(value) {
@@ -49,10 +46,8 @@ export function amigoExp() {
       : 'fixed',
   })
   // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
-  ScrollTrigger.addEventListener('refresh', () => locoScroll.update())
 
   // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
-  ScrollTrigger.refresh()
 
   ScrollTrigger.defaults({
     scroller: '.locomotive-scroll',
@@ -168,5 +163,9 @@ export function amigoExp() {
     0
   )
 
-  locoScroll.on('resize', ScrollTrigger.update)
+  imagesloaded('.root', { background: true }, function () {
+    locoScroll.update()
+  })
+  ScrollTrigger.addEventListener('refresh', () => locoScroll.update())
+  ScrollTrigger.refresh()
 }

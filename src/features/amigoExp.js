@@ -4,10 +4,8 @@
 import Lenis from '@studio-freight/lenis'
 import { Dragdealer } from 'dragdealer'
 import gsap from 'gsap'
-import { Draggable } from 'gsap/all'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import imagesloaded from 'imagesloaded'
-import JSConfetti from 'js-confetti'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -79,6 +77,7 @@ export function amigoExp() {
         x: 0,
         y: 1,
         speed: 0.3,
+        left: 0,
         right: 16,
         //  slide: true,
 
@@ -95,7 +94,6 @@ export function amigoExp() {
             document
               .querySelectorAll('.toggle-decorative')
               .forEach((target) => target.classList.add('active'))
-            confetti()
           }
         },
       })
@@ -120,17 +118,6 @@ export function amigoExp() {
             .forEach((target) => target.classList.add('acessa'))
         },
       })
-
-      const canvas = document.querySelector('#canvas-target')
-      const jsConfetti = new JSConfetti({ canvas })
-
-      const confetti = () => {
-        jsConfetti.addConfetti({
-          confettiNumber: 2,
-          emojiSize: 100,
-          emojis: ['🥼', '🩺', '👩🏿‍⚕️', '👩🏻‍⚕️', '💙'],
-        })
-      }
 
       let tl = gsap.timeline()
 

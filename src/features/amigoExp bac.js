@@ -1,33 +1,62 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-import Lenis from '@studio-freight/lenis'
 import { Dragdealer } from 'dragdealer'
 import gsap from 'gsap'
 import { Draggable } from 'gsap/all'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import imagesloaded from 'imagesloaded'
 import JSConfetti from 'js-confetti'
+import LocomotiveScroll from 'locomotive-scroll'
 
 gsap.registerPlugin(ScrollTrigger)
 
 export function amigoExp() {
-  // LENIS CODE
-  const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    direction: 'vertical',
-    gestureDirection: 'vertical',
+  const locoScroll = new LocomotiveScroll({
+    el: document.querySelector('.locomotive-scroll'),
     smooth: true,
-    mouseMultiplier: 1,
-    smoothTouch: false,
-    touchMultiplier: 2,
-    infinite: false,
+    scrollFromAnywhere: true,
+    smartphone: {
+      smooth: false,
+      breakpoint: 0,
+    },
+    tablet: {
+      smooth: true,
+    },
+    smoothMobile: 0,
+    multiplier: 1.0,
   })
-  function raf(time) {
-    lenis.raf(time)
-    requestAnimationFrame(raf)
-  }
-  requestAnimationFrame(raf)
+
+  imagesloaded('.locomotive-scroll', { background: true }, function () {
+    locoScroll.update()
+  })
+  ScrollTrigger.addEventListener('refresh', () => locoScroll.update())
+  ScrollTrigger.refresh()
+
+  ScrollTrigger.scrollerProxy('.locomotive-scroll', {
+    scrollTop(value) {
+      return arguments.length
+        ? locoScroll.scrollTo(value, 0, 0)
+        : locoScroll.scroll.instance.scroll.y
+    },
+    getBoundingClientRect() {
+      return {
+        top: 0,
+        left: 0,
+        width: window.innerWidth,
+        height: window.innerHeight,
+      }
+    },
+    pinType: document.querySelector('.locomotive-scroll').style.transform
+      ? 'transform'
+      : 'fixed',
+  })
+  // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
+
+  // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
+
+  ScrollTrigger.defaults({
+    scroller: '.locomotive-scroll',
+  })
 
   $('.section_relacao-medico').each(function (index) {
     let childTriggers = $(this).find('.relacao-medico_text-item')
@@ -44,6 +73,7 @@ export function amigoExp() {
     childTriggers.each(function (index) {
       ScrollTrigger.create({
         trigger: $(this),
+        scroller: '.locomotive-scroll',
         ease: 'none',
         scrub: 'true',
         start: '30vh center',
@@ -92,6 +122,7 @@ export function amigoExp() {
 
   ScrollTrigger.create({
     trigger: secaoEspecifica,
+    scroller: '.locomotive-scroll',
     start: 'top 50%',
     lazy: false,
     onEnter: function () {
@@ -100,7 +131,17 @@ export function amigoExp() {
   })
 
   ScrollTrigger.create({
+    trigger: '.minimal-footer',
+    scroller: '.locomotive-scroll',
+    start: 'top bottom',
+    end: 'bottom top',
+    once: true,
+    onEnter: () => locoScroll.update(),
+  })
+
+  ScrollTrigger.create({
     trigger: '.section_voce-ja-pensou',
+    scroller: '.locomotive-scroll',
     start: 'top center',
     lazy: false,
     onEnter: function () {

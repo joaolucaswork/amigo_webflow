@@ -146,6 +146,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@studio-freight/lenis@npm:^0.2.28":
+  version: 0.2.28
+  resolution: "@studio-freight/lenis@npm:0.2.28"
+  dependencies:
+    tiny-emitter: ^2.1.0
+    virtual-scroll: ^2.2.1
+  checksum: 504e33919fcbc20d68c56a02c3650fcf07b450f0839bdef03316b1ccd766550c4eca1b6a16becfcd26094ced0c94b88224adb3bfe5bfc82af4a07e277ea8e1df
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -1991,9 +2001,9 @@ __metadata:
   linkType: hard
 
 "lru-cache@npm:^7.7.1":
-  version: 7.17.0
-  resolution: "lru-cache@npm:7.17.0"
-  checksum: 28c2a98ad313b8d61beac1f08257b6f0ca990e39d24a9bc831030b6e209447cfb11c6d9d1a774282189bfc9609d1dfd17ebe485228dd68f7b96b6b9b7740894e
+  version: 7.18.1
+  resolution: "lru-cache@npm:7.18.1"
+  checksum: ab0ec1360c552f1ffa54b1eaf0026126c5116a07bee156b92d1e971f4c8c88e9160f0fad4ab6fed4e0fdea84f25a4590ece085bc57ed9ab1d90b17f0b138c556
   languageName: node
   linkType: hard
 
@@ -2854,6 +2864,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tiny-emitter@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "tiny-emitter@npm:2.1.0"
+  checksum: fbcfb5145751a0e3b109507a828eb6d6d4501352ab7bb33eccef46e22e9d9ad3953158870a6966a59e57ab7c3f9cfac7cab8521db4de6a5e757012f4677df2dd
+  languageName: node
+  linkType: hard
+
 "tippy.js@npm:^6.3.7":
   version: 6.3.7
   resolution: "tippy.js@npm:6.3.7"
@@ -2969,11 +2986,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"virtual-scroll@npm:^2.2.1":
+  version: 2.2.1
+  resolution: "virtual-scroll@npm:2.2.1"
+  dependencies:
+    tiny-emitter: ^2.1.0
+  checksum: 40620c856860ee2ff4b8ef6ebe298002d90ad55a296c1dc40f1e557632c93f7f76ac6a776082c19e2cf0af15e4ab12d8b9b84117c357d5ad812620428c682914
+  languageName: node
+  linkType: hard
+
 "vite-javascript-webflow@workspace:.":
   version: 0.0.0-use.local
   resolution: "vite-javascript-webflow@workspace:."
   dependencies:
     "-": ^0.0.1
+    "@studio-freight/lenis": ^0.2.28
     "@types/node": ^18.11.9
     D: ^1.0.0
     counterup2: ^2.0.2

@@ -16,7 +16,6 @@ import './styles/swiper-style.css'
 import './styles/style.css'
 import './styles/home-animation-style.css'
 import './styles/animation.css'
-import './styles/locomotive-scroll.css'
 
 navbarAnimation()
 tippyAnimation()

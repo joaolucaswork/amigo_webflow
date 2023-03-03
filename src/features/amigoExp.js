@@ -348,8 +348,8 @@ export function amigoExp() {
             // click our .form-success-trigger
             // this class has an Interaction on it that runs our Lottie icon animation
             $('.desconto-trigger').click()
-            enableBanner()
-          }, 600)
+            //enableBanner()
+          }, 0)
           // NICE!!!!!!!!
         })
       })

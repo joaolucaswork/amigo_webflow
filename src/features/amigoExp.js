@@ -333,6 +333,9 @@ export function amigoExp() {
             document
               .querySelectorAll('.banner-liberado')
               .forEach((target) => target.classList.add('liberado'))
+            document
+              .querySelectorAll('.circle-banner-desconto')
+              .forEach((target) => target.classList.add('liberado'))
           })
         })
 

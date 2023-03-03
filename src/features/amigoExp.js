@@ -47,17 +47,8 @@ export function amigoExp() {
           childTriggers.eq(index).addClass('is-active')
           childTargets.eq(index).addClass('is-active')
         }
-        // add new ScrollTrigger to ".controle-opacity"
-        ScrollTrigger.create({
-          trigger: $(this),
-          start: 'top center',
-          onToggle: (isActive) => {
-            if (isActive) {
-              makeItemActive(0)
-            }
-          },
-        })
-        // create triggers for child items
+        // makeItemActive(0)
+        // create triggers
         childTriggers.each(function (index) {
           ScrollTrigger.create({
             trigger: $(this),

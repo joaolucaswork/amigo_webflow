@@ -213,10 +213,11 @@ export function amigoExp() {
           ),
           moveDistanceSetting = -100,
           timeScaleSetting = 1,
-          pausedStateSetting = false
+          pausedStateSetting = true
         if (reverseSetting) moveDistanceSetting = 100
         let marqueeTimeline = gsap.timeline({
           repeat: -1,
+          paused: true,
           onReverseComplete: () => marqueeTimeline.progress(1),
         })
         if (verticalSetting) {

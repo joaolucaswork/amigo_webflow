@@ -37,7 +37,7 @@ export function amigoExp() {
         })
       })
 
-      $('.controle-opacity').each(function (index) {
+      $('.section_relacao-medico').each(function (index) {
         let childTriggers = $(this).find('.relacao-medico_text-item')
         let childTargets = $(this).find('.relacao-medico_img-item')
         // switch active class
@@ -47,7 +47,7 @@ export function amigoExp() {
           childTriggers.eq(index).addClass('is-active')
           childTargets.eq(index).addClass('is-active')
         }
-        makeItemActive(0)
+        //makeItemActive(0)
         // create triggers
         childTriggers.each(function (index) {
           ScrollTrigger.create({
@@ -55,6 +55,12 @@ export function amigoExp() {
             ease: 'none',
             start: 'top center',
             end: 'bottom center',
+            onLeave: function () {
+              childTriggers.eq(0).removeClass('is-active')
+            },
+            onLeaveBack: function () {
+              childTriggers.eq(0).removeClass('is-active')
+            },
             onToggle: (isActive) => {
               if (isActive) {
                 makeItemActive(index)

@@ -326,6 +326,12 @@ export function amigoExp() {
             document
               .querySelectorAll('.block-code')
               .forEach((target) => target.classList.add('hide'))
+            document
+              .querySelectorAll('.banner-bloqueado')
+              .forEach((target) => target.classList.add('hide'))
+            document
+              .querySelectorAll('.banner-liberado')
+              .forEach((target) => target.classList.add('liberado'))
           })
         })
         // when the form is submitted

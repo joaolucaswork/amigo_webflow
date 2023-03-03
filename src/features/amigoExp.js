@@ -117,10 +117,42 @@ export function amigoExp() {
         start: 'top center',
         lazy: false,
         onEnter: function () {
-          toggle.setValue(1) // Muda o estado do toggle quando a seção específica entra na viewport
           document
             .querySelectorAll('.light-led-emoji')
             .forEach((target) => target.classList.add('acessa'))
+        },
+      })
+
+      ScrollTrigger.create({
+        trigger: '.section_superlotacao-filas',
+        start: 'top center',
+        lazy: false,
+        onEnter: function () {
+          document
+            .querySelectorAll('.pink-shadown, .purple-shadown')
+            .forEach((target) => target.classList.add('ativar'))
+        },
+      })
+
+      ScrollTrigger.create({
+        trigger: '.amigo-one-banner',
+        start: 'top center',
+        lazy: false,
+        onEnter: function () {
+          document
+            .querySelectorAll('.rounded-circle-blur')
+            .forEach((target) => target.classList.add('ativar'))
+        },
+      })
+
+      ScrollTrigger.create({
+        trigger: '.section_convite-residente',
+        start: 'top center',
+        lazy: false,
+        onEnter: function () {
+          document
+            .querySelectorAll('.green-shadown-resident')
+            .forEach((target) => target.classList.add('ativar'))
         },
       })
 
@@ -138,42 +170,45 @@ export function amigoExp() {
         0
       )
       //Cards Header
-      function cardsHeader() {
-        // Logo Scale
-        $('.section_amigo-exp-hero').each(function (index) {
-          let triggerElement = $(this)
-          let targetElement = $(
-            '.grid-images-aexp.first, .grid-images-aexp.third'
-          )
 
-          let tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: triggerElement,
-              // trigger element - viewport
-              start: 'top top',
-              end: 'bottom top',
-              scrub: true,
+      // Logo Scale
+      $('.section_amigo-exp-hero').each(function (index) {
+        let triggerElement = $(this)
+        let targetElement = $(
+          '.grid-images-aexp.first, .grid-images-aexp.third'
+        )
+
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: triggerElement,
+            // trigger element - viewport
+            start: 'top center',
+            end: 'bottom top',
+            scrub: true,
+            onEnter: function () {
+              document
+                .querySelectorAll('.blue-green-shadown')
+                .forEach((target) => target.classList.add('ativar'))
             },
-          })
-          tl.from(
-            targetElement,
-            {
-              y: '-15%',
-              duration: 1,
-            },
-            0
-          )
-          tl.from(
-            '.grid-images-aexp.second',
-            {
-              y: '15%',
-              duration: 1,
-            },
-            0
-          )
+          },
         })
-      }
-      cardsHeader()
+        tl.from(
+          targetElement,
+          {
+            y: '-15%',
+            duration: 1,
+          },
+          0
+        )
+        tl.from(
+          '.grid-images-aexp.second',
+          {
+            y: '15%',
+            duration: 1,
+          },
+          0
+        )
+      })
 
       // MARQUEE POWER-UP
       // attribute value checker

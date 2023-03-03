@@ -137,6 +137,43 @@ export function amigoExp() {
         },
         0
       )
+      //Cards Header
+      function cardsHeader() {
+        // Logo Scale
+        $('.section_amigo-exp-hero').each(function (index) {
+          let triggerElement = $(this)
+          let targetElement = $(
+            '.grid-images-aexp.first, .grid-images-aexp.third'
+          )
+
+          let tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: triggerElement,
+              // trigger element - viewport
+              start: 'top top',
+              end: 'bottom top',
+              scrub: true,
+            },
+          })
+          tl.from(
+            targetElement,
+            {
+              y: '-15%',
+              duration: 1,
+            },
+            0
+          )
+          tl.from(
+            '.grid-images-aexp.second',
+            {
+              y: '15%',
+              duration: 1,
+            },
+            0
+          )
+        })
+      }
+      cardsHeader()
 
       // MARQUEE POWER-UP
       // attribute value checker

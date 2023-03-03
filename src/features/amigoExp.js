@@ -293,6 +293,7 @@ export function amigoExp() {
             triggerClickEl.removeClass('is-paused')
           }
         }
+
         if (window.matchMedia('(pointer: fine)').matches) {
           triggerHoverEl.on('mouseenter', () => pauseMarquee(true))
           triggerHoverEl.on('mouseleave', () => pauseMarquee(false))
@@ -335,12 +336,19 @@ export function amigoExp() {
           })
         })
         // when the form is submitted
+
+        function enableBanner() {
+          var banner = document.querySelectorAll('.marquee-text_component')
+          banner.setAttribute('tr-marquee-element', 'component')
+        }
+
         $('.form-amigoexp').submit(() => {
           // wait 1000ms (so we have time to see the success wrapper show)
           setTimeout(() => {
             // click our .form-success-trigger
             // this class has an Interaction on it that runs our Lottie icon animation
             $('.desconto-trigger').click()
+            enableBanner()
           }, 600)
           // NICE!!!!!!!!
         })

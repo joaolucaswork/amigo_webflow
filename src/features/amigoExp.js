@@ -334,6 +334,7 @@ export function amigoExp() {
               .forEach((target) => target.classList.add('liberado'))
           })
         })
+
         // when the form is submitted
         $('.form-amigoexp').submit(() => {
           // wait 1000ms (so we have time to see the success wrapper show)

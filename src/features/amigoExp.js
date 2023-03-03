@@ -47,7 +47,7 @@ export function amigoExp() {
           childTriggers.eq(index).addClass('is-active')
           childTargets.eq(index).addClass('is-active')
         }
-        // makeItemActive(0)
+        makeItemActive(0)
         // create triggers
         childTriggers.each(function (index) {
           ScrollTrigger.create({

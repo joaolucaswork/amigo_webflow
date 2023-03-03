@@ -21,7 +21,7 @@ export function amigoExp() {
         smooth: true,
         mouseMultiplier: 1,
         smoothTouch: false,
-        touchMultiplier: 2,
+        touchMultiplier: 1,
         infinite: false,
       })
       function raf(time) {

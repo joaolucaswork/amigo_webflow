@@ -336,13 +336,15 @@ export function amigoExp() {
           })
         })
 
+        let pausado = true
+
         // when the form is submitted
         $('.form-amigoexp').submit(() => {
-          // wait 1000ms (so we have time to see the success wrapper show)
           setTimeout(() => {
-            // click our .form-success-trigger
-            // this class has an Interaction on it that runs our Lottie icon animation
             $('.desconto-trigger').click()
+            // refatoração utilizando operador ternário
+            pausado ? marqueeTimeline.play() : marqueeTimeline.pause()
+            pausado = !pausado
           }, 600)
           // NICE!!!!!!!!
         })

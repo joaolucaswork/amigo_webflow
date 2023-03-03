@@ -76,7 +76,7 @@ export function amigoExp() {
         scroller: '.locomotive-scroll',
         ease: 'none',
         scrub: 'true',
-        start: '30vh center',
+        start: 'top center',
         end: 'bottom center',
         onToggle: (isActive) => {
           if (isActive) {

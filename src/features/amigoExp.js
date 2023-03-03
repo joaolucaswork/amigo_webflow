@@ -37,7 +37,7 @@ export function amigoExp() {
         })
       })
 
-      $('.section_relacao-medico').each(function (index) {
+      $('.controle-opacity').each(function (index) {
         let childTriggers = $(this).find('.relacao-medico_text-item')
         let childTargets = $(this).find('.relacao-medico_img-item')
         // switch active class
@@ -47,14 +47,22 @@ export function amigoExp() {
           childTriggers.eq(index).addClass('is-active')
           childTargets.eq(index).addClass('is-active')
         }
-        makeItemActive(0)
-        // create triggers
+        // add new ScrollTrigger to ".controle-opacity"
+        ScrollTrigger.create({
+          trigger: $(this),
+          start: 'top center',
+          onToggle: (isActive) => {
+            if (isActive) {
+              makeItemActive(0)
+            }
+          },
+        })
+        // create triggers for child items
         childTriggers.each(function (index) {
           ScrollTrigger.create({
             trigger: $(this),
             ease: 'none',
-            scrub: 'true',
-            start: '30vh center',
+            start: 'top center',
             end: 'bottom center',
             onToggle: (isActive) => {
               if (isActive) {
@@ -259,6 +267,42 @@ export function amigoExp() {
           !$(this).hasClass('is-paused')
             ? pauseMarquee(true)
             : pauseMarquee(false)
+        })
+
+        document.querySelectorAll('.desconto-trigger').forEach((trigger) => {
+          trigger.addEventListener('click', function () {
+            document
+              .querySelectorAll('.section_faixa-desconto-liberado')
+              .forEach((target) => target.classList.add('codigo-liberado'))
+            document
+              .querySelectorAll('.text-bloqueado')
+              .forEach((target) => target.classList.add('hide'))
+            document
+              .querySelectorAll('.text-liberado')
+              .forEach((target) => target.classList.add('show'))
+            document
+              .querySelectorAll('.primary-button-default-link')
+              .forEach((target) => target.classList.remove('disabled'))
+            document
+              .querySelectorAll('.ocultar-codigo')
+              .forEach((target) => target.classList.add('liberado'))
+            document
+              .querySelectorAll('.texto-codigo')
+              .forEach((target) => target.classList.add('liberado'))
+            document
+              .querySelectorAll('.block-code')
+              .forEach((target) => target.classList.add('hide'))
+          })
+        })
+        // when the form is submitted
+        $('.form-amigoexp').submit(() => {
+          // wait 1000ms (so we have time to see the success wrapper show)
+          setTimeout(() => {
+            // click our .form-success-trigger
+            // this class has an Interaction on it that runs our Lottie icon animation
+            $('.desconto-trigger').click()
+          }, 600)
+          // NICE!!!!!!!!
         })
       })
     }

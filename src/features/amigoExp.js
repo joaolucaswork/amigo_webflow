@@ -314,7 +314,7 @@ export function amigoExp() {
         duration: 0.7,
       })
 
-      tl5.from(
+      tl5.to(
         '.text-opacity-animation',
         {
           autoAlpha: 1,
@@ -500,6 +500,26 @@ export function amigoExp() {
             pausado = !pausado
           }, 600)
           // NICE!!!!!!!!
+        })
+
+        let navEl = $('.amigo-exp-navbar')
+        let formSectionEl = $(
+          '.section_form-amigo-exp, .amigo-exp-hero-left_wrapper'
+        )
+
+        formSectionEl.each(function (index) {
+          ScrollTrigger.create({
+            trigger: $(this),
+            start: 'top top',
+            end: 'bottom top',
+            onToggle: ({ self, isActive }) => {
+              if (isActive) {
+                navEl.addClass('hide-nav')
+              } else {
+                navEl.removeClass('hide-nav')
+              }
+            },
+          })
         })
       })
     }

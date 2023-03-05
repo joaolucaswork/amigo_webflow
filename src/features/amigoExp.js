@@ -181,7 +181,7 @@ export function amigoExp() {
           '.grid-images-aexp.first, .grid-images-aexp.third'
         )
 
-        let tl = gsap.timeline({
+        let tl6 = gsap.timeline({
           scrollTrigger: {
             trigger: triggerElement,
             // trigger element - viewport
@@ -196,7 +196,7 @@ export function amigoExp() {
             },
           },
         })
-        tl.from(
+        tl6.from(
           targetElement,
           {
             y: '-15%',
@@ -204,7 +204,7 @@ export function amigoExp() {
           },
           0
         )
-        tl.from(
+        tl6.from(
           '.grid-images-aexp.second',
           {
             y: '15%',
@@ -219,7 +219,7 @@ export function amigoExp() {
         let triggerElement = $(this)
         let targetElement = $('.superlotacao-glass-decorative.superlotacao')
 
-        let tl = gsap.timeline({
+        let tl3 = gsap.timeline({
           scrollTrigger: {
             trigger: triggerElement,
             // trigger element - viewport
@@ -229,7 +229,7 @@ export function amigoExp() {
             ease: 'none',
           },
         })
-        tl.from(
+        tl3.from(
           targetElement,
           {
             y: '-20%',
@@ -237,7 +237,7 @@ export function amigoExp() {
           },
           0
         )
-        tl.from(
+        tl3.from(
           '.superlotacao-glass-decorative.filas',
           {
             y: '20%',
@@ -282,52 +282,47 @@ export function amigoExp() {
       })
 
       // Scroll into view
-      function lineAnimation() {
-        let tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: '.section_amigo-one-exp',
-            start: 'top center',
-            end: 'bottom top',
-          },
-        })
-        tl.from('.amigo-one-exp-grid_item', {
-          y: '20%',
-          opacity: 0,
+
+      let tl1 = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.section_amigo-one-exp',
+          start: 'top center',
+          end: 'bottom top',
+        },
+      })
+      tl1.from('.amigo-one-exp-grid_item', {
+        y: '20%',
+        autoAlpha: 0,
+        stagger: { each: 0.2 },
+        ease: 'power3.out',
+        duration: 0.7,
+      })
+
+      let tl5 = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.voce-ja-pensou_component',
+          start: 'top center',
+          end: 'bottom top',
+        },
+      })
+      tl5.from('.voce-ja-pensou-icon-circle', {
+        scale: '0.2',
+        autoAlpha: 0,
+        stagger: { each: 0.2 },
+        ease: 'power3.out',
+        duration: 0.7,
+      })
+
+      tl5.from(
+        '.text-opacity-animation',
+        {
+          autoAlpha: 0,
           stagger: { each: 0.2 },
           ease: 'power3.out',
           duration: 0.7,
-        })
-      }
-      lineAnimation()
-
-      function circleIcon() {
-        let tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: '.voce-ja-pensou_component',
-            start: 'top center',
-            end: 'bottom top',
-          },
-        })
-        tl.from('.voce-ja-pensou-icon-circle', {
-          scale: '0.2',
-          opacity: 0,
-          stagger: { each: 0.2 },
-          ease: 'power3.out',
-          duration: 0.7,
-        })
-
-        tl.from(
-          '.text-opacity-animation',
-          {
-            opacity: 0,
-            stagger: { each: 0.2 },
-            ease: 'power3.out',
-            duration: 0.7,
-          },
-          0
-        )
-      }
-      circleIcon()
+        },
+        0
+      )
 
       // MARQUEE POWER-UP
       // attribute value checker

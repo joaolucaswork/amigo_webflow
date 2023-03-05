@@ -285,7 +285,7 @@ export function amigoExp() {
       function lineAnimation() {
         let tl = gsap.timeline({
           scrollTrigger: {
-            trigger: '.amigo-one-exp_component',
+            trigger: '.section_amigo-one-exp',
             start: 'top center',
             end: 'bottom top',
           },

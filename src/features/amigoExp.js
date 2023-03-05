@@ -232,7 +232,7 @@ export function amigoExp() {
         tl3.from(
           targetElement,
           {
-            y: '-20%',
+            y: '-25%',
             duration: 1,
           },
           0
@@ -240,7 +240,7 @@ export function amigoExp() {
         tl3.from(
           '.superlotacao-glass-decorative.filas',
           {
-            y: '20%',
+            y: '25%',
             duration: 1,
           },
           0
@@ -285,14 +285,15 @@ export function amigoExp() {
 
       let tl1 = gsap.timeline({
         scrollTrigger: {
-          trigger: '.section_amigo-one-exp',
+          trigger: '.amigo-one-exp_component',
           start: 'top center',
+          //  scrub: true,
           end: 'bottom top',
         },
       })
-      tl1.from('.amigo-one-exp-grid_item', {
-        y: '20%',
-        autoAlpha: 0,
+      tl1.to('.amigo-one-exp-grid_item', {
+        y: '0%',
+        autoAlpha: 1,
         stagger: { each: 0.2 },
         ease: 'power3.out',
         duration: 0.7,
@@ -305,9 +306,9 @@ export function amigoExp() {
           end: 'bottom top',
         },
       })
-      tl5.from('.voce-ja-pensou-icon-circle', {
-        scale: '0.2',
-        autoAlpha: 0,
+      tl5.to('.voce-ja-pensou-icon-circle', {
+        scale: '1',
+        autoAlpha: 1,
         stagger: { each: 0.2 },
         ease: 'power3.out',
         duration: 0.7,
@@ -316,7 +317,7 @@ export function amigoExp() {
       tl5.from(
         '.text-opacity-animation',
         {
-          autoAlpha: 0,
+          autoAlpha: 1,
           stagger: { each: 0.2 },
           ease: 'power3.out',
           duration: 0.7,

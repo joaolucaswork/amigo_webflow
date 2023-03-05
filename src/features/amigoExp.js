@@ -4,10 +4,11 @@
 import Lenis from '@studio-freight/lenis'
 import { Dragdealer } from 'dragdealer'
 import gsap from 'gsap'
+import { Flip } from 'gsap/Flip'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import imagesloaded from 'imagesloaded'
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger, Flip)
 
 export function amigoExp() {
   $(function () {
@@ -126,6 +127,8 @@ export function amigoExp() {
       ScrollTrigger.create({
         trigger: '.section_superlotacao-filas',
         start: 'top center',
+        scrub: true,
+        ease: 'none',
         lazy: false,
         onEnter: function () {
           document
@@ -183,6 +186,7 @@ export function amigoExp() {
             trigger: triggerElement,
             // trigger element - viewport
             start: 'top center',
+            ease: 'none',
             end: 'bottom top',
             scrub: true,
             onEnter: function () {
@@ -209,6 +213,121 @@ export function amigoExp() {
           0
         )
       })
+
+      // Logo Scale
+      $('.section_superlotacao-filas').each(function (index) {
+        let triggerElement = $(this)
+        let targetElement = $('.superlotacao-glass-decorative.superlotacao')
+
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: triggerElement,
+            // trigger element - viewport
+            start: 'top center',
+            end: 'bottom top',
+            scrub: true,
+            ease: 'none',
+          },
+        })
+        tl.from(
+          targetElement,
+          {
+            y: '-20%',
+            duration: 1,
+          },
+          0
+        )
+        tl.from(
+          '.superlotacao-glass-decorative.filas',
+          {
+            y: '20%',
+            duration: 1,
+          },
+          0
+        )
+      })
+
+      // Logo Scale
+      $('.amigo-one-banner').each(function (index) {
+        let triggerElement = $(this)
+        let targetElement = $('.amigo-one-banner_wrapper')
+
+        let tl4 = gsap.timeline({
+          scrollTrigger: {
+            trigger: triggerElement,
+            // trigger element - viewport
+            start: 'top center',
+            end: 'bottom 80%',
+            scrub: true,
+            ease: 'none',
+          },
+        })
+        tl4.to(
+          '.grid-item',
+          {
+            y: '0%',
+            autoAlpha: 1,
+          },
+          0
+        )
+
+        tl4.to(
+          targetElement,
+          {
+            x: '0%',
+            autoAlpha: 1,
+          },
+          0
+        )
+      })
+
+      // Scroll into view
+      function lineAnimation() {
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: '.amigo-one-exp_component',
+            start: 'top center',
+            end: 'bottom top',
+          },
+        })
+        tl.from('.amigo-one-exp-grid_item', {
+          y: '20%',
+          opacity: 0,
+          stagger: { each: 0.2 },
+          ease: 'power3.out',
+          duration: 0.7,
+        })
+      }
+      lineAnimation()
+
+      function circleIcon() {
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: '.voce-ja-pensou_component',
+            start: 'top center',
+            end: 'bottom top',
+          },
+        })
+        tl.from('.voce-ja-pensou-icon-circle', {
+          scale: '0.2',
+          opacity: 0,
+          stagger: { each: 0.2 },
+          ease: 'power3.out',
+          duration: 0.7,
+        })
+
+        tl.from(
+          '.text-opacity-animation',
+          {
+            opacity: 0,
+            stagger: { each: 0.2 },
+            ease: 'power3.out',
+            duration: 0.7,
+          },
+          0
+        )
+      }
+      circleIcon()
 
       // MARQUEE POWER-UP
       // attribute value checker

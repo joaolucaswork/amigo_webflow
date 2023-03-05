@@ -503,9 +503,20 @@ export function amigoExp() {
         })
 
         let navEl = $('.amigo-exp-navbar')
-        let formSectionEl = $(
-          '.section_form-amigo-exp, .amigo-exp-hero-left_wrapper'
-        )
+        let formSectionEl = $('.section_form-amigo-exp')
+
+        window.addEventListener('scroll', function () {
+          var scrollPosition = window.scrollY
+          var scrollPercentage =
+            (scrollPosition /
+              (document.body.scrollHeight - window.innerHeight)) *
+            100
+          if (scrollPercentage >= 10 && !formSectionEl.hasClass('active')) {
+            navEl.removeClass('hide-nav')
+          } else {
+            navEl.addClass('hide-nav')
+          }
+        })
 
         formSectionEl.each(function (index) {
           ScrollTrigger.create({
@@ -515,8 +526,10 @@ export function amigoExp() {
             onToggle: ({ self, isActive }) => {
               if (isActive) {
                 navEl.addClass('hide-nav')
+                formSectionEl.addClass('active')
               } else {
                 navEl.removeClass('hide-nav')
+                formSectionEl.removeClass('active')
               }
             },
           })

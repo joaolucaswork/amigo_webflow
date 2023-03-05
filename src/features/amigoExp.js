@@ -521,7 +521,7 @@ export function amigoExp() {
         formSectionEl.each(function (index) {
           ScrollTrigger.create({
             trigger: $(this),
-            start: 'top top',
+            start: 'top center',
             end: 'bottom top',
             onToggle: ({ self, isActive }) => {
               if (isActive) {

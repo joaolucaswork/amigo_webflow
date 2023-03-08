@@ -74,31 +74,58 @@ export function amigoExp() {
       const secaoEspecifica = document.querySelectorAll(
         '.section_melhorar-experiencia'
       )
+
       $('.toggle-decorative').on('click', function (e) {
         e.preventDefault()
       })
 
-      var toggle = new Dragdealer('toggle-decorative', {
+      const toggleDesktop = new Dragdealer('toggle-decorative-desktop', {
         steps: 2,
         x: 0,
         y: 1,
         speed: 0.3,
         left: 0,
         right: 16,
-        //  slide: true,
+        // slide: true,
 
         requestAnimationFrame: true,
         animationCallback: function (x, y) {
           // Atualiza o estado do toggle quando o usuário arrasta o controle
-          var toggleState = Math.round(x)
+          const toggleState = Math.round(x)
           // Faça algo com o estado do toggle, por exemplo:
           if (toggleState === 0) {
             document
-              .querySelectorAll('.toggle-decorative')
+              .querySelectorAll('.toggle-decorative-desktop')
               .forEach((target) => target.classList.remove('active'))
           } else {
             document
-              .querySelectorAll('.toggle-decorative')
+              .querySelectorAll('.toggle-decorative-desktop')
+              .forEach((target) => target.classList.add('active'))
+          }
+        },
+      })
+
+      const toggleMobile = new Dragdealer('toggle-decorative-mobile', {
+        steps: 2,
+        x: 0,
+        y: 1,
+        speed: 0.3,
+        left: 0,
+        right: 16,
+        // slide: true,
+
+        requestAnimationFrame: true,
+        animationCallback: function (x, y) {
+          // Atualiza o estado do toggle quando o usuário arrasta o controle
+          const toggleState = Math.round(x)
+          // Faça algo com o estado do toggle, por exemplo:
+          if (toggleState === 0) {
+            document
+              .querySelectorAll('.toggle-decorative-mobile')
+              .forEach((target) => target.classList.remove('active'))
+          } else {
+            document
+              .querySelectorAll('.toggle-decorative-mobile')
               .forEach((target) => target.classList.add('active'))
           }
         },
@@ -109,7 +136,8 @@ export function amigoExp() {
         start: 'top 50%',
         lazy: false,
         onEnter: function () {
-          toggle.setValue(1) // Muda o estado do toggle quando a seção específica entra na viewport
+          toggleDesktop.setValue(1) // Muda o estado do toggle quando a seção específica entra na viewport
+          toggleMobile.setValue(1)
         },
       })
 

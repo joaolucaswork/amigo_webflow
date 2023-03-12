@@ -10,6 +10,7 @@ import { blogPage } from './features/blogPage'
 import { globalCode } from './features/global'
 import { homeAnimations } from './features/homepage'
 import navbarAnimation from './features/navbarAnimation'
+import { pVenda } from './features/pVenda'
 import { tippyAnimation } from './features/tippyScript'
 
 import './styles/swiper-style.css'
@@ -21,6 +22,7 @@ navbarAnimation()
 tippyAnimation()
 homeAnimations()
 amigoClinic()
+pVenda()
 scrollAtenda()
 amigoSenior()
 amigoExp()

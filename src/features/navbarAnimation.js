@@ -8,11 +8,7 @@ function navbarAnimation() {
   var lastScrollTop
   window.addEventListener('scroll', function () {
     var scrollTop = window.pageYOffset || document.documentElement.scrollTop
-    if (
-      scrollTop > lastScrollTop &&
-      scrollTop > 10 &&
-      !document.querySelector('.dropdown-toggle').classList.contains('w--open')
-    ) {
+    if (scrollTop > lastScrollTop && scrollTop > 10) {
       document
         .querySelectorAll('.nav_component')
         .forEach((target) => target.classList.add('hide-nav'))
